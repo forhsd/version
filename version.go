@@ -1,8 +1,11 @@
 package version
 
-import "fmt"
+import (
+	"fmt"
+	"runtime"
+)
 
-type About struct {
+type VersionInfo struct {
 	Version   string
 	GoVersion string
 	GitBranch string
@@ -10,9 +13,13 @@ type About struct {
 	GitCommit string
 }
 
-func (a About) String() {
+var (
+	Info = VersionInfo{GoVersion: runtime.Version()}
+)
+
+func (a *VersionInfo) About() {
 	fmt.Printf(
-		"Version: %s GoVersion: %s GitBranch: %s BuildTime: %s GitCommit: %s",
+		"Version: %s GoVersion: %s GitBranch: %s BuildTime: %s GitCommit: %s\n",
 		a.Version,
 		a.GoVersion,
 		a.GitBranch,
