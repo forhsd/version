@@ -14,7 +14,18 @@ type VersionInfo struct {
 }
 
 var (
-	Info = VersionInfo{GoVersion: runtime.Version()}
+	Info = VersionInfo{
+		Version:   Version,
+		GoVersion: runtime.Version(),
+		GitBranch: GitBranch,
+		BuildTime: BuildTime,
+		GitCommit: GitBranch,
+	}
+	Version   string
+	GoVersion string
+	GitBranch string
+	BuildTime string
+	GitCommit string
 )
 
 func (a *VersionInfo) About() {
