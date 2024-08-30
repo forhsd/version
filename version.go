@@ -28,13 +28,13 @@ var (
 	GitCommit string
 )
 
-func (a *VersionInfo) About() {
+func About() {
 	fmt.Printf(
 		"Version: %s GoVersion: %s GitBranch: %s BuildTime: %s GitCommit: %s\n",
-		a.Version,
-		a.GoVersion,
-		a.GitBranch,
-		a.BuildTime,
-		a.GitCommit,
+		Info.Version,
+		Info.GoVersion,
+		Info.GitBranch,
+		Info.BuildTime,
+		Info.GitCommit,
 	)
 }
