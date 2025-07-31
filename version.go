@@ -19,7 +19,7 @@ var (
 		GoVersion: runtime.Version(),
 		GitBranch: GitBranch,
 		BuildTime: BuildTime,
-		GitCommit: GitBranch,
+		GitCommit: GitCommit,
 	}
 	Version   string
 	GoVersion string
